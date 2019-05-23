@@ -86,5 +86,5 @@ dao.addMagasin(m);
 		return dao.getAllMagasins();
 	}
 
-	
+		
 }
