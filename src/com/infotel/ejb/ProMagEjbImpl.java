@@ -72,7 +72,7 @@ dao.addMagasin(m);
 	public Magasin getMagasin(long idMagasin) {
 		// TODO Auto-generated method stub
 		return dao.getMagasin(idMagasin);
-	} 
+	}  
 
 	@Override
 	public Magasin editMagasin(Magasin m) {
