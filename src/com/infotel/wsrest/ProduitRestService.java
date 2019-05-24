@@ -79,7 +79,7 @@ public class ProduitRestService {
 		return dao.getProduit(idProduit);
 	}
 	@GET
-	@Path("editPerissable/{nomProduit}/{stock}/{prix}/{dlc}")
+	@Path("editPerissable/{nomProduit}/{stock}/{prix}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Perissable editPerissable(
 			@PathParam(value="nomProduit") String nomProduit,
