@@ -4,14 +4,12 @@ import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 @DiscriminatorValue("PERISSABLE")
 public class Perissable extends Produit {
 	
+	private static final long serialVersionUID = 1L;
 	private Date dateLimiteUtilisation;
 
 	public Date getDateLimiteUtilisation() {

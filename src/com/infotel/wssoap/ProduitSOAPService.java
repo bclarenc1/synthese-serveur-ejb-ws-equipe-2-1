@@ -114,6 +114,9 @@ public class ProduitSOAPService {
 			@WebParam(name="prixLocal") double prixLocal) {
 		
 		Magasin m = new Magasin();
+		m.setNomMagasin(nomMagasin);
+		m.setCodeMagasin(codeMagasin);
+		m.setPrixLocal(prixLocal);
 		dao.addMagasin(m);
 	}
 	
@@ -135,6 +138,9 @@ public class ProduitSOAPService {
 			@WebParam(name="prixLocal") double prixLocal) {
 	
 		Magasin m = dao.getMagasin(idMagasin);
+		m.setNomMagasin(nomMagasin);
+		m.setCodeMagasin(codeMagasin);
+		m.setPrixLocal(prixLocal);
 		dao.editMagasin(m);
 		
 		return m;
