@@ -12,7 +12,7 @@ import com.infotel.metier.Produit;
 
 @Singleton
 @LocalBean
-public class DaoImpl implements IdaoRemote {
+public class DaoImpl implements IdaoRemote{
 
 	@PersistenceContext(unitName="EJBWS_PU")
 	EntityManager em;
