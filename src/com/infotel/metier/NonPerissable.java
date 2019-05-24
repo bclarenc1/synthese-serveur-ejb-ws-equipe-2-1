@@ -1,7 +1,15 @@
 package com.infotel.metier;
 
-public class NonPerissable extends Produit {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+@DiscriminatorValue("NPERISSABLE")
+public class NonPerissable extends Produit {
+	
 	private String modeDemploi;
 
 	public String getModeDemploi() {

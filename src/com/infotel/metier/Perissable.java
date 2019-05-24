@@ -2,8 +2,16 @@ package com.infotel.metier;
 
 import java.util.Date;
 
-public class Perissable extends Produit {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+@DiscriminatorValue("PERISSABLE")
+public class Perissable extends Produit {
+	
 	private Date dateLimiteUtilisation;
 
 	public Date getDateLimiteUtilisation() {
