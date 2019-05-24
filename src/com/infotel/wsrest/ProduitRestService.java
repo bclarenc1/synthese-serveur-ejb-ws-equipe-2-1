@@ -13,6 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.jboss.logging.Param;
+
 import com.infotel.dao.DaoImpl;
 import com.infotel.metier.Magasin;
 import com.infotel.metier.NonPerissable;
@@ -61,6 +63,7 @@ public class ProduitRestService {
 		np.setStock(stock);
 		np.setPrix(prix);
 		np.setModeDemploi(modeDemploi);
+		
 		
 		dao.addProduit(np);
 	}
@@ -112,7 +115,7 @@ public class ProduitRestService {
 		np.setModeDemploi(modeDemploi);
 		
 		dao.editProduit(np);
-	return np;
+		return np;
 	} 
 	 
 	@GET
@@ -132,20 +135,23 @@ public class ProduitRestService {
 			@PathParam(value="prixLocal") double prixLocal) {
 		
 		Magasin m = new Magasin();
+		m.setNomMagasin(nomMagasin);
+		m.setCodeMagasin(codeMagasin);
+		m.setPrixLocal(prixLocal);
 		dao.addMagasin(m);
 	}
 	
 	@GET
 	@Path("removeMagasin/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void removeMagasin(@WebParam(name="idMagasin") long idMagasin) {
+	public void removeMagasin(@PathParam(value="idMagasin") long idMagasin) {
 		dao.removeMagasin(idMagasin);
 	}
 
 	@GET
 	@Path("getMagasin/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Magasin getMagasin(@WebParam(name="idMagasin") long idMagasin) {
+	public Magasin getMagasin(@PathParam(value="idMagasin") long idMagasin) {
 		return dao.getMagasin(idMagasin);
 	}
 	
