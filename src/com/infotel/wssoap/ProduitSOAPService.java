@@ -22,7 +22,7 @@ public class ProduitSOAPService {
 	@EJB
 	private DaoImpl dao;  // pas Idao, car les WS ne supportent pas les interfaces
  
-//	no getter/setter needed
+//	no getter/setter needed 
   
 	@WebMethod
 	public void addPerissable(
